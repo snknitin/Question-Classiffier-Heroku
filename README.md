@@ -27,11 +27,21 @@ This is also unlabeled so it is really diffficult to understand if a query is a 
 
           Who, What, When ,Where, Why, How, Do, Is, Can, Does, Should, Are
   * POS tag combinations of similar questions can be used to create a Grammar for a parse
+  
+ **Failure cases:**
+  
+* Does are female deer.
+* Why is Gamora?
+* Why no. I do not have any money.
+* Where there is a will, there is a way.
+* When the time comes, I'll jump!
+
     
 ## Approach used
 
 I used the stats_parser package to create a parse tree for each sentence. Questions have the **SBARQ** node as root(A tree with an SBARQ node having an embedded SQ (optionally) will be an indicator the input is a question. The WH+ node (WHNP/WHADVP/WHADJP) contains the question stem (who/what/when/where/why/how) and the SQ holds the inverted phrase.)
 
+* Other nodes like SBAR+NP and SBAR+SINV also seem to resemble a question but might not be grammatically termed as one. These could be included based on the requirement or on what we define as a question. 
 
 * parser.parse("how old is barack obama?")
 Out[26]: 
