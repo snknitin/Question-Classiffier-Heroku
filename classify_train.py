@@ -63,6 +63,8 @@ class Solution(object):
 
 if __name__=="__main__":
     s=Solution()
+    # Uncomment the next line for the question tagging
+    #s.question_classify()
     print(s.is_question("How old is barack obama?"))
     print(s.is_question("How old is barack obama"))
 
