@@ -27,7 +27,7 @@ def index():
 
 @app.route("/", methods=['GET', 'POST'])
 def predict():
-	# # Take data value and get features
+	# # Take input search query and tag it if it is a question
 	words = request.form['words']
 	print(words)
 
