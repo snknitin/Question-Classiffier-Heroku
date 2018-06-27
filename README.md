@@ -35,12 +35,12 @@ I used the stats_parser package to create a parse tree for each sentence. Questi
 * parser.parse("how old is barack obama?")
 Out[26]: 
 
-    Tree('SBARQ', [Tree('WHADJP', [Tree('WRB', ['how']), Tree('JJ', ['old'])]), Tree('SQ', [Tree('VBZ', ['is']), Tree('NP', [Tree('JJ', ['barack']), Tree('NN', ['obama'])])]), Tree('.', ['?'])])
+            Tree('SBARQ', [Tree('WHADJP', [Tree('WRB', ['how']), Tree('JJ', ['old'])]), Tree('SQ', [Tree('VBZ', ['is']), Tree('NP', [Tree('JJ', ['barack']), Tree('NN', ['obama'])])]), Tree('.', ['?'])])
 
 * parser.parse("how old is barack obama")
 Out[27]: 
 
-    Tree('SBARQ', [Tree('WHADVP', [Tree('WRB', ['how']), Tree('JJ', ['old'])]), Tree('SQ', [Tree('VBZ', ['is']), Tree('NP', [Tree('JJ', ['barack']), Tree('NN', ['obama'])])])])
+            Tree('SBARQ', [Tree('WHADVP', [Tree('WRB', ['how']), Tree('JJ', ['old'])]), Tree('SQ', [Tree('VBZ', ['is']), Tree('NP', [Tree('JJ', ['barack']), Tree('NN', ['obama'])])])])
 
 ## How to run
 
