@@ -2,10 +2,13 @@ import os
 from time import time
 from stat_parser import Parser
 
-
-import pandas as pd
 DATA_FILE=os.path.join(os.getcwd(),"Data/queries.10k.txt")
 
+
+def is_question(sentence):
+    parser=Parser()
+    result = parser.parse(sentence)[0]
+    return ["n/a","QUESTION_CODE"][result=="SBARQ"]
 
 
 class Solution(object):
@@ -23,6 +26,7 @@ class Solution(object):
             return "QUESTION_CODE"
         else:
             return "n/a"
+
 
     def question_classify(self):
         with open(DATA_FILE, 'r') as doc:
@@ -45,7 +49,7 @@ class Solution(object):
 
 if __name__=="__main__":
     s=Solution()
-    result= s.question_classify()
+    print(s.is_question("How old is barack obama?"))
 
 
 
