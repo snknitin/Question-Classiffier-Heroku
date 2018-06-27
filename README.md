@@ -31,10 +31,20 @@ This is also unlabeled so it is really diffficult to understand if a query is a 
 ## Approach used
 
 I used the stats_parser package to create a parse tree for each sentence. Questions have the **SBARQ** node as root. 
-    
+
+* parser.parse("how old is barack obama?")
+Out[26]: 
+
+    Tree('SBARQ', [Tree('WHADJP', [Tree('WRB', ['how']), Tree('JJ', ['old'])]), Tree('SQ', [Tree('VBZ', ['is']), Tree('NP', [Tree('JJ', ['barack']), Tree('NN', ['obama'])])]), Tree('.', ['?'])])
+
+* parser.parse("how old is barack obama")
+Out[27]: 
+
+    Tree('SBARQ', [Tree('WHADVP', [Tree('WRB', ['how']), Tree('JJ', ['old'])]), Tree('SQ', [Tree('VBZ', ['is']), Tree('NP', [Tree('JJ', ['barack']), Tree('NN', ['obama'])])])])
+
 ## How to run
 
-The requirements for this project are present in the requirements.txt file with a redirection to the stats_parser module.
+I created a virtual environment for this project called newenv in which i installed flask,gunicorn and some other modules that this project requires. The file requirements.txt has the list of modules with a redirection to the stats_parser module.
 This has been deployed on Heroku.
 
      https://immense-depths-71834.herokuapp.com
