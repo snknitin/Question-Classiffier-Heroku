@@ -37,6 +37,8 @@ I used the stats_parser package to create a parse tree for each sentence. Questi
 The requirements for this project are present in the requirements.txt file with a redirection to the stats_parser module.
 This has been deployed on Heroku.
 
+     https://immense-depths-71834.herokuapp.com
+
 The deploy.py is the flask application which can run on localhost as well
 
     python deploy.py
