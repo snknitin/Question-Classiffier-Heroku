@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doc_Classify</title>
+
+    <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
+       <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+       <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Hello!</h1>
+
+    <p>Welcome to the Question Classifier. Please enter the content in the text area and click on <b>Predict</b></p>
+        <br>
+    Note: The content needs to
+
+    <div class="container">
+
+
+  <h2>Classifier</h2>
+  <form  action="" method="post" role="form">
+    {{ form.csrf }}
+    <div class="form-group">
+      <label for="words">Words:</label>
+      <input type="text" class="form-control" id="words" name="words" placeholder="Enter document content">
+    </div>
+    <button type="submit" class="btn btn-success">Predict</button>
+  </form>
+
+  <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                <strong>Result is : </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1] }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+</div>
+<br>
+</div>
+</div>
+
+
+
+</body>
+</html>
