@@ -23,9 +23,9 @@ This is also unlabeled so it is really diffficult to understand if a query is a 
 
 * Since these are search queries, we can't expect them to have a defining question mark and the mere presence of a ? doesn't necessarily mean it is a question because these are user entered search strings
 
-  * List of question starter words could be 
+  * List of **question starter words** could be 
 
-          Who, What, When ,Where, Why, How, Do, Is, Can, Does, Should, Are
+          Who, What, When ,Where, Why, How, Do, Is, Can, May, Does, Should, Would, Could, Has, Are, Will, Am, Was, Are, Were, Have, Might, Did etc.,
   * POS tag combinations of similar questions can be used to create a Grammar for a parse
   
  **Failure cases:**
@@ -37,7 +37,7 @@ This is also unlabeled so it is really diffficult to understand if a query is a 
 * When the time comes, I'll jump!
 
     
-## Approach used
+## Approach used - Technical grammar syntax for a question
 
 I used the stats_parser package to create a parse tree for each sentence. Questions have the **SBARQ** node as root(A tree with an SBARQ node having an embedded SQ (optionally) will be an indicator the input is a question. The WH+ node (WHNP/WHADVP/WHADJP) contains the question stem (who/what/when/where/why/how) and the SQ holds the inverted phrase.)
 
