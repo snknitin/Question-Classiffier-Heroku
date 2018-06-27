@@ -17,4 +17,4 @@ virtualenv==16.0.0
 Werkzeug==0.14.1
 WTForms==2.2.1
 
--r ./parser/pyStatParser/requirements.txt
+-r ./parser/pyStatParser/requires.txt
