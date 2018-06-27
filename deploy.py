@@ -1,6 +1,6 @@
 from flask import Flask, request, flash, jsonify, render_template, make_response
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
-
+import classify_train as ct
 DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -31,7 +31,7 @@ def predict():
 	words = request.form['words']
 	print(words)
 
-	return "This works"
+	return "%s\t \n is  %s\t"% (words,ct.is_question(words))
 
 
 if __name__ == "__main__":
