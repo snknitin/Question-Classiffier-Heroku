@@ -43,6 +43,17 @@ I used the stats_parser package to create a parse tree for each sentence. Questi
 
 * Other nodes like SBAR+NP and SBAR+SINV also seem to resemble a question but might not be grammatically termed as one. These could be included based on the requirement or on what we define as a question. 
 
+* **Clause Level Bracket-Label** - Penn Treebank constituents
+
+    * S - simple declarative clause, i.e. one that is not introduced by a (possible empty) subordinating conjunction or a wh-word and that does not exhibit subject-verb inversion.
+    * SBAR - Clause introduced by a (possibly empty) subordinating conjunction.
+    * SBARQ - Direct question introduced by a wh-word or a wh-phrase. Indirect questions and relative clauses should be bracketed as SBAR, not SBARQ.
+    * SINV - Inverted declarative sentence, i.e. one in which the subject follows the tensed verb or modal.
+    * SQ - Inverted yes/no question, or main clause of a wh-question, following the wh-phrase in SBARQ.
+
+
+
+
 * parser.parse("how old is barack obama?")
 Out[26]: 
 
